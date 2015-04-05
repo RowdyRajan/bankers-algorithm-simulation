@@ -6,41 +6,43 @@ void multipleNumberInput(int spilts, int array[]);
 
 int main() {
 	int resources_num;
-	char thing[70];
+	int process_num;
+
 	printf("Number of different resource types: ");
 	scanf("%d", &resources_num);
 	printf("%d\n", resources_num);
 
 	int resource_instances[resources_num];
 	printf("Number of instances of each resource type: ");
+	multipleNumberInput(resources_num, resource_instances);
 
+	/*
+	int i = 0;
+	for (i; i< resources_num; i++){
+		printf("%d\n", resource_instances[i]);
+	}*/
+
+	printf("Number of processes: ");
+	scanf("%d", &process_num);
+	printf("%d\n", process_num);
+
+	int process_numbers[process_num][resources_num];
+
+	int i = 0;
+	while(i < process_num){
+		printf("Details of P%d: ", i +1);
+		multipleNumberInput(resources_num, process_numbers[i]);
+		i++;
+	}
+
+}
+
+//Will get resources_num number of inputs and save them in resource_instances
+void multipleNumberInput(int resources_num, int resource_instances[]) {
 	int i = 0;
 	while(i < resources_num && scanf("%d", &resource_instances[i]) != 0){
 		printf("%d\n", resource_instances[i]);
 		i++;
 	}
-
-
-
-}
-
-void multipleNumberInput(int spilts, int array[]) {
-	char multipleNumbers[70];
-	char* number;
-	const char* s = " ";
-	//fgets(multipleNumbers,spilts *3,stdin);
-	//scanf("s", multipleNumbers);
-	printf("%s\n", multipleNumbers);
-	number = strtok(multipleNumbers, " ");
-	printf("%s", number);
-	//array[0] = atoi(number);
-	number = strtok(NULL, " ");
-	printf("%s", number);
-	//array[1] = atoi(number);
-	/*
-	for (int i = 1; i < spilts; i++) {
-		number = strtok(NULL, " ");
-		array[i]= atoi(number);
-	}*/
 
 }
