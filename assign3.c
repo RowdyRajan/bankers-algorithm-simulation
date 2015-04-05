@@ -22,18 +22,29 @@ int main() {
 		printf("%d\n", resource_instances[i]);
 	}*/
 
+	struct procces{
+		int allocation[resources_num] = {0};
+		int request[resources_num] = {0};
+		int max[resources_num];
+	};
+
 	printf("Number of processes: ");
 	scanf("%d", &process_num);
 	printf("%d\n", process_num);
 
+	struct procces processes[process_num];
+
 	int process_numbers[process_num][resources_num];
+
 
 	int i = 0;
 	while(i < process_num){
 		printf("Details of P%d: ", i +1);
-		multipleNumberInput(resources_num, process_numbers[i]);
+		multipleNumberInput(resources_num, processes[i].max);
 		i++;
 	}
+
+
 
 }
 
