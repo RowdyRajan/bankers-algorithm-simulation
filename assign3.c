@@ -15,28 +15,21 @@ int main() {
 	printf("Number of different resource types: ");
 	scanf("%d", &resources_num);
 	printf("%d\n", resources_num);
-	printResource(resources_num);
-	printResource(resources_num);
-	printResource(resources_num);
-	printResource(resources_num);
-	printResource(resources_num);
+
 	printSnapShot(resources_num);
 	int resource_instances[resources_num];
 	printf("Number of instances of each resource type: ");
 	multipleNumberInput(resources_num, resource_instances);
 
-	/*
-	int i = 0;
-	for (i; i< resources_num; i++){
-		printf("%d\n", resource_instances[i]);
-	}*/
+
 
 	/*
 	struct procces{
 		//int allocation[resources_num] = {0};
 		//int request[resources_num] = {0};
 		int max[resources_num];
-	};*/
+	};
+	*/
 
 	printf("Number of processes: ");
 	scanf("%d", &process_num);
@@ -83,12 +76,13 @@ void waitFiveSeconds(){
 
 void printSnapShot(int resource_num){
 	printf("\n");
-	printf("%-*s", (resource_num *3),"Allocation ");
-	printf("%-*s", (resource_num *3)," request ");
-	printf("%-*s", (resource_num *3)," available ");
-	printf("%-*s", (resource_num *3)," Max Request  ");
-	printf("%-*s", (resource_num *3)," Max avialable");
-
+	printf("   ");
+	int i = 0;
+	while (i < 5){
+		printResource(resource_num);
+		printf("  ");
+		i++;
+	}
 }
 
 void printResource(int resource_num){
