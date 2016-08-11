@@ -5,8 +5,8 @@ run: build
 	./a.out
 
 build:
-	$(CC) assign3.c
+	$(CC) bankersAlogorithm.c
 
 tar:
-	tar cvf submit.tar assign3.c Makefile
+	tar cvf submit.tar bankersAlogorithm.c Makefile
 
